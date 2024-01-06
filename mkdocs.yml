@@ -1,1 +1,3 @@
 site_name: Documentación Fiscalía Web
+theme:
+  name: material
