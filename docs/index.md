@@ -1,5 +1,6 @@
 # ¡Bienvenido a la Documentación!
 
+
 ## **Introducción**
 
 ## **Propósito del Documento**
@@ -64,7 +65,6 @@ La información contenida en este documento abarca una amplia gama de aspectos t
 ### Pruebas y Validación:
 
   - **Estrategias de prueba:** Se describen estrategias efectivas para realizar pruebas de calidad y rendimiento en el sistema.
-  - **Casos de prueba:** Se presentan ejemplos de casos de prueba que pueden utilizarse para validar el funcionamiento de FISCALÍA WEB.
   - **Validación de resultados:** Se explica la validación de los resultados de las pruebas y asegurar que el sistema cumple con los requisitos.
 
 ### Referencias y Recursos Adicionales:
@@ -96,8 +96,7 @@ Este espacio está destinado a registrar las distintas versiones del documento a
 
 | **VERSIÓN N.º.** | **FECHA** | **DETALLES** |
 | --- | --- | --- |
-| **1.0** |
- | **Primera versión del documento** |
+| **1.0** | **Nov 2023** | **Primera versión del documento** |
 
 ###
 ## **Infraestructura del sistema**
@@ -159,13 +158,11 @@ En resumen, la infraestructura basada en AWS proporciona un entorno robusto y es
 
 Amazon IAM, escalabilidad automática, balanceadores de carga y el uso del Sistema de Nombres de Dominio (DNS) crea una infraestructura sólida y flexible que respalda las necesidades críticas de la Fiscalía General del Estado de Baja California. Los diagramas de la infraestructura visualizan esta arquitectura compleja y sus componentes interconectados para una comprensión más profunda del sistema.
 
-## **Diagramas de la infraestructura**
+## **Diagrama de la infraestructura**
 
 Infraestructura basada en AWS con contenedores Docker orquestados por Amazon MQ, almacenamiento en S3, base de datos en Aurora MySQL, y balanceadores de carga para garantizar escalabilidad y eficiencia en la gestión centralizada de procesos y documentos de la FGEBC.
 
-![](RackMultipart20240103-1-jfj6p2_html_54081c639b4d94ba.jpg)
-
-**(Diagrama usado como placeholder)**
+![](RackMultipart20240116-1-7nwsn5_html_69d99d01e4bdd4fe.png)
 
 ###
 ## **Arquitectura del Sistema**
@@ -201,7 +198,7 @@ La arquitectura de Fiscalía Web se basa en el enfoque de microservicios, una es
 - En el front-end, proporciona datos necesarios para la interfaz de usuario, mejorando la experiencia del usuario al presentar información precisa y actualizada.
 - En el back-end, suministra datos esenciales para operaciones internas, facilitando el funcionamiento fluido de los microservicios y la lógica de negocio.
 
-### Dossiers (Expedientes):
+### Expedientes:
 
 - Este componente crítico se encarga de gestionar todas las solicitudes relacionadas con la creación, actualización y mantenimiento de expedientes.
 - Los expedientes actúan como puntos de partida esenciales para iniciar diversos flujos de trabajo dentro de la aplicación y son fundamentales para el funcionamiento de la Fiscalía Web.
@@ -245,11 +242,9 @@ La arquitectura integral de Fiscalía Web en AWS garantiza una operación fluida
 
 Cada microservicio desempeña un papel específico y se integra de manera coordinada para ofrecer una plataforma completa y eficiente para la Fiscalía General del Estado de Baja California. Los diagramas de arquitectura de los módulos principales proporcionan una visión más detallada de cómo estos componentes interactúan en la aplicación.
 
-## **Diagramas de Arquitectura de los Microservicios**
+## **Diagrama de Arquitectura de los Microservicios**
 
-![](RackMultipart20240103-1-jfj6p2_html_ca3d07c366d5eba5.png)
-
-**(Diagrama usado como placeholder)**
+![](RackMultipart20240116-1-7nwsn5_html_e6cf618d3da70af2.png)
 
 ## **Módulos Principales y funciones:**
 
@@ -318,9 +313,13 @@ Cada uno de estos módulos desempeña un papel esencial en la operación de la F
 
 ## **Diagramas de Arquitectura de los módulos**
 
-![](RackMultipart20240103-1-jfj6p2_html_ca3d07c366d5eba5.png)
+![](RackMultipart20240116-1-7nwsn5_html_376f9ef4294c61fc.png)
 
-**(Diagrama usado como placeholder)**
+![](RackMultipart20240116-1-7nwsn5_html_dbf207734423b61d.png)
+
+![](RackMultipart20240116-1-7nwsn5_html_d6eb23bcc7f4cb6.png) ![](RackMultipart20240116-1-7nwsn5_html_95b3e5918974d9ed.png)
+
+![](RackMultipart20240116-1-7nwsn5_html_f2807a1b6e42a427.png)
 
 ###
 ## **Lenguajes de programación utilizados**
@@ -379,7 +378,7 @@ La integración de la aplicación Fiscalía Web con la API de Google Maps es un 
 
 ## **Descripción de integraciones externas**
 
-**Google Maps**
+### Google Maps
 
 La API de Google Maps se ha incorporado de manera inteligente en la aplicación Fiscalía Web con el propósito de ofrecer una serie de ventajas significativas para los usuarios:
 
@@ -485,7 +484,7 @@ Se describe la necesidad de recibir múltiples archivos en diferentes formatos p
   - Una vez validada la solicitud, se procede con el envío formal y se inicia el proceso correspondiente.
 
 1. **Recepción de la Solicitud en Poder Judicial:**
-  - La solicitud es recibida por el Poder Judicial para su revisión y procesamiento.
+  - La solicitud es recibida por el Poder Judicial para su revisión y procesamiento, si a la solicitud le falta alguna información necesaria, la solicitud no es recibida y el sistema emite un mensaje de error
 2. **Respuestas del Poder Judicial:**
   - El Poder Judicial devuelve un folio de confirmación si la validación es aceptada o un mensaje de error en caso contrario.
 
@@ -502,9 +501,7 @@ Se describe la necesidad de recibir múltiples archivos en diferentes formatos p
 
 ### Diagrama del Servicio Web con el Poder Judicial
 
-![](RackMultipart20240103-1-jfj6p2_html_ca3d07c366d5eba5.png)
-
-**(Diagrama usado como placeholder)**
+![](RackMultipart20240116-1-7nwsn5_html_57ab52bebff2a278.png)
 
 ### Consejería Jurídica del Estado de Baja California (Defensoría)
 
@@ -527,9 +524,7 @@ Esta comunicación automatizada y estructurada asegura que los imputados sean as
 
 ### Diagrama del Servicio Web con la Defensoría
 
-![](RackMultipart20240103-1-jfj6p2_html_ca3d07c366d5eba5.png)
-
-**(Diagrama usado como placeholder)**
+![](RackMultipart20240116-1-7nwsn5_html_3ac0c6a5e7acfe1b.png) ![Shape3](RackMultipart20240116-1-7nwsn5_html_49ac0cb03196381.gif)
 
 ## **Formatos de intercambio de datos**
 
@@ -565,320 +560,1213 @@ En las siguientes secciones de la documentación, se proporcionará información
 
 A lo largo de esta sección, analizaremos en detalle cómo se estructuran las bases de datos en AWS para Fiscalía Web, incluyendo las tablas, los campos y las relaciones clave que permiten la gestión eficiente de casos, expedientes y otros elementos críticos del proceso judicial. Además, destacaremos las ventajas de la centralización de datos en la nube, como la accesibilidad desde cualquier ubicación y la capacidad de escalar según las necesidades cambiantes de las fiscalías.
 
-**Lista de Tablas**
+### Lista de Tablas
 
-| No  | NOMBRE DE LA TABLA             | No  | NOMBRE DE LA TABLA             |
-|-----|--------------------------------|-----|--------------------------------|
-| 1   | ACCIONSEGUIR                   | 301 | EXPSOLBANDEJAENTRADA           |
-| 2   | ACTIVIDADMEDIACION             | 302 | EXPSOLBITACORABANDEJAENTRADA   |
-| 3   | ACTIVIDADTIPO                  | 303 | EXPSOLBITACORAESTADO           |
-| 4   | AGENDA                         | 304 | EXPSOLDOC                      |
-| 5   | AGENDAAUDIENCIA                | 305 | EXPVEHICULODETENIDO            |
-| 6   | AGENDAAUDIENCIAREPROGRAMADA    | 306 | EXPVEHICULORECUPERADO          |
-| 7   | AGENDADIAS                     | 307 | EXPVEHICULOREINCIDENCIA        |
-| 8   | AGENDAESPECIFICA               | 308 | EXPVEHOBJPLACASREINCIDENCIA    |
-| 9   | AGENDAPARTICIPA                | 309 | EXPVICCANALIZADA               |
-| 10  | AGENDAPARTICIPARECORDATORIO    | 310 | EXPVICFICHAELEC                |
-| 11  | AGENDAPRIORIDAD                | 311 | FICHA                          |
-| 12  | AREA                           | 312 | FICHAPERSONAFISICA             |
-| 13  | AREAABRIRRACDESPUESCREAR       | 313 | FICHAPERSONAFISMEDIAFILIACION  |
-| 14  | AREAAGENDA                     | 314 | FUERO                          |
-| 15  | AREAAUTOASIGNACION             | 315 | GRADOPARTICIPACION             |
-| 16  | AREAN                          | 316 | HECHOCLASIFICACIONLUGAR        |
-| 17  | AREAPERICIAL                   | 317 | HECHOLUGAR                     |
-| 18  | AREAPERITO                     | 318 | HUELLA                         |
-| 19  | AREASREGLAS                    | 319 | IMPUTADO                       |
-| 20  | AREASTIPOREGLAS                | 320 | IMPUTADOHUELLA                 |
-| 21  | AREATIPO                       | 321 | INSTANCIASOLICITAREASIG        |
-| 22  | AREATIPOPROCEDIMIENTO          | 322 | INSTITUCION                    |
-| 23  | ASIGNAESCRIBIENTE              | 323 | INSTITUCIONENVIO               |
-| 24  | ASIGNAJUEZ                     | 324 | INSTITUCIONREMISION            |
-| 25  | ASIGNAJUEZBITACORA             | 325 | INSTITUCIONROL                 |
-| 26  | ASIGNAJUEZSENT                 | 326 | INTENCIONALIDAD                |
-| 27  | ASIGNANOTIFICADOR              | 327 | INTERVENCION                   |
-| 28  | ASIGNASECUENCIAL               | 328 | JUEZ                           |
-| 29  | ASIGNASECUENCIALSOLICITUD      | 329 | JUEZTURNOJUEZ                  |
-| 30  | ATENCIONCIUDADANA              | 330 | LOCALIDAD                      |
-| 31  | ATENCIONCIUDADANAESTATUS       | 331 | MANDJUDIMPSTATUS               |
-| 32  | AUDIENCIA                      | 332 | MANDJUDSTATUS                  |
-| 33  | AUDIENCIAREPROGRAMACIONMOTIVO  | 333 | MAND_REPBC                     |
-| 34  | AUDIENCIAREPROGRAMADA          | 334 | MEDIOCONOCIMIENTO              |
-| 35  | AUDIENCIATIPO                  | 335 | MEDIOSOLICITUDPERICIAL         |
-| 36  | AUDIENCIA_PJ_SOLICITUD         | 336 | MENSAJERIASTATUS               |
-| 37  | AUTORIDAD                      | 337 | MENSAJESPJ_NUEVOS              |
-| 38  | AUTORIDADSOLPERICIAL           | 338 | MENSAJES_PERSONAS              |
-| 39  | AUTORIDADTIPO                  | 339 | MF_BARBAPECULIAR               |
-| 40  | AVISOCANALIZACION              | 340 | MF_BARBATAMANO                 |
-| 41  | AYUDATOPICO                    | 341 | MF_BARBILLAFORMA               |
-| 42  | BANDEJAENTRADA                 | 342 | MF_BARBILLAINCLINACION         |
-| 43  | BANDEJAENTRADATIPO             | 343 | MF_BARBILLAPECULIAR            |
-| 44  | BITACORAACCION                 | 344 | MF_BARBILLATAMANO              |
-| 45  | BITACORAACCIONESPECIFICA       | 345 | MF_BIGOTEFORMA                 |
-| 46  | BITACORABLOQUEO                | 346 | MF_BIGOTEGROSOR                |
-| 47  | BITACORACORRELATIVOERROR       | 347 | MF_BIGOTEPECULIAR              |
-| 48  | BITACORADOCUMENTO              | 348 | MF_BIGOTETAMANO                |
-| 49  | BITACORAMOVIMIENTOAREAEMPLEADO | 349 | MF_BOCAPECULIAR                |
-| 50  | BITACORAMOVIMIENTOOBJETO       | 350 | MF_BOCATAMANO                  |
-| 51  | BITACORAOPERACION              | 351 | MF_CABELLOCOLOR                |
-| 52  | BITACORAOPERACION3             | 352 | MF_CABELLOESTILO               |
-| 53  | BITASIGAVISO                   | 353 | MF_CABELLOPECULIAR             |
-| 54  | BITDOCTOSECRETO                | 354 | MF_CABELLOTAMANO               |
-| 55  | BITEMPAUTCAMBIOAREA            | 355 | MF_CABEZAFORMA                 |
-| 56  | BITENVIOCORREO                 | 356 | MF_CABEZATAMANO                |
-| 57  | BITEXPNOTIFICACIONSEJAP        | 357 | MF_CARAFORMA                   |
-| 58  | BITINTCONT                     | 358 | MF_CARATAMANO                  |
-| 59  | BITINTCONTDET                  | 359 | MF_CARATEZ                     |
-| 60  | BITINTENTODESBLOQUEOERRONEO    | 360 | MF_CEJACOLOCACION              |
-| 61  | BITMSGINCORPORADOMANUAL        | 361 | MF_CEJAFORMA                   |
-| 62  | BITREACARCH                    | 362 | MF_CEJAGROSOR                  |
-| 63  | BITREGRESOINTERVENCION         | 363 | MF_CEJATAMANO                  |
-| 64  | BITRELSOLPEREXPEDIENTE         | 364 | MF_CONTEXTURA                  |
-| 65  | BITSEGUIMIENTOAUDIENCIA        | 365 | MF_CUELLOGROSOR                |
-| 66  | BITSEGUIMIENTOCITACION         | 366 | MF_CUELLOPECULIAR              |
-| 67  | BITTRAAVISO                    | 367 | MF_CUELLOTAMANO                |
-| 68  | CALIFICACIONDELITO             | 368 | MF_DIENTEPECULIAR              |
-| 69  | CATALOGOONG                    | 369 | MF_DIENTETAMANO                |
-| 70  | CATEOMOTIVO                    | 370 | MF_DIENTETIPO                  |
-| 71  | CATEOTIPOLUGAR                 | 371 | MF_ESTOMAGO                    |
-| 72  | CAT_MENSAJES_DOCTO             | 372 | MF_FIGURA                      |
-| 73  | CERESO                         | 373 | MF_FRENTEALTURA                |
-| 74  | CLADOCALARMA                   | 374 | MF_FRENTEANCHURA               |
-| 75  | CLADOCASIGNAJUEZ               | 375 | MF_FRENTEFORMA                 |
-| 76  | CLADOCAUDIENCIATIPO            | 376 | MF_FRENTEPECULIAR              |
-| 77  | CLADOCDEFSINACCESO             | 377 | MF_HOMBROGROSOR                |
-| 78  | CLADOCDELITO                   | 378 | MF_HOMBROLONGITUD              |
-| 79  | CLADOCEDOJURIDICOEXP           | 379 | MF_HOMBROPOSICION              |
-| 80  | CLADOCEDOJURIDICOIMP           | 380 | MF_LABIOGROSOR                 |
-| 81  | CLADOCETAPAIMP                 | 381 | MF_LABIOLONGITUD               |
-| 82  | CLADOCEVITIPOACCION            | 382 | MF_LABIOPECULIAR               |
-| 83  | CLADOCOBJETOSITUACION          | 383 | MF_LABIOPOSICION               |
-| 84  | CLADOCOFICINATIPO              | 384 | MF_NARIZBASE                   |
-| 85  | CLADOCOFICINATIPOENVIO         | 385 | MF_NARIZPECULIAR               |
-| 86  | CLADOCPLANTILLA                | 386 | MF_NARIZTAMANO                 |
-| 87  | CLADOCREQUERIMIENTOFISCAL      | 387 | MF_NARIZTIPO                   |
-| 88  | CLADOCRES                      | 388 | MF_OJOCOLOCACION               |
-| 89  | CLADOCROLES                    | 389 | MF_OJOCOLOR                    |
-| 90  | CLADOCSTATUSIMPORDCAP          | 390 | MF_OJOFORMA                    |
-| 91  | CLADOCTIPOEXP                  | 391 | MF_OJOPECULIAR                 |
-| 92  | CLADOCTOCONFIGCLADOCTO         | 392 | MF_OJOTAMANO                   |
-| 93  | CLADOCTOCONFIGPJCLADOCTO       | 393 | MF_OREJAFORMA                  |
-| 94  | CLADOCTOINSTENVIO              | 394 | MF_OREJALOBULO                 |
-| 95  | CLADOCTOTIPOAPERCIBIMIENTO     | 395 | MF_OREJASEPARACION             |
-| 96  | CLADOCTO_PJ_TIPOPROMOCION      | 396 | MF_OREJATAMANO                 |
-| 97  | CLADOCVARIABLE                 | 397 | MF_PIELCOLOR                   |
-| 98  | CLADOCVEHICULOSITUACION        | 398 | MF_SENATIPO                    |
-| 99  | CLADOCVEHICULOSTATUS           | 399 | MODULO                         |
-| 100 | CLADOC_SSPE_TIPOSOLICITUD      | 400 | MOTIVOASIGNACION               |
-| 101 | CLASIFICACIONDOCTO             | 401 | MOTIVOBAJAASIG                 |
-| 102 | CLASIFICACIONDOCTOMODULO       | 402 | MOTIVOCONCLUSIONJUSTALT        |
-| 103 | COLONIA                        | 403 | MOTIVONOCELEBRACION            |
-| 104 | COLONIAVIALIDAD                | 404 | MOTIVONONOTIFICA               |
-| 105 | CONFIGACCESS                   | 405 | MOTIVOREACTIVACION             |
-| 106 | CONFIGCLADOCTO                 | 406 | MOTIVOREASIG                   |
-| 107 | CONFIGCLADOCTOPJ               | 407 | MOTIVOREASIGTIPOMOTIVOREASIG   |
-| 108 | CONTROL_BAJAS                  | 408 | MOTIVOREMISION                 |
-| 109 | CONVENIOSTATUS                 | 409 | MUNICIPIO                      |
-| 110 | COORDINACION                   | 410 | NOMBRESCATALOGOS               |
-| 111 | COORDINACIONTIPO               | 411 | NUCSJUDICIALIZADOSPORAREA      |
-| 112 | CORRELATIVOERROR               | 412 | OBJETOCLACONSTEXT              |
-| 113 | DEFENSOR                       | 413 | OBJETOCLASIFICACION            |
-| 114 | DELEGACION                     | 414 | OBJETOLUGARRESGUARDO           |
-| 115 | DELITOCAPITULO                 | 415 | OBJETOSITUACION                |
-| 116 | DELITOCARACTERISTICA           | 416 | OBJETOSUBCLASIFICACION         |
-| 117 | DELITOFORMAACCION              | 417 | OFICINA                        |
-| 118 | DELITOINSTRUMENTOCOMISION      | 418 | OFICINAAGENDA                  |
-| 119 | DELITOMODALIDAD                | 419 | OFICINAAREAPERICIAL            |
-| 120 | DELITOMODALIDADCOMISION        | 420 | OFICINACENTROMEDIACION         |
-| 121 | DELITOMODALIDADROBOVEHICULO    | 421 | OFICINAENVIO                   |
-| 122 | DELITOTIPOAPERCIBIMIENTO       | 422 | OFICINAMENSAJERIA              |
-| 123 | DELITOTITULO                   | 423 | OFICINAMESACTRLASIGPER         |
-| 124 | DOCTOSIMP                      | 424 | OFICINAN                       |
-| 125 | DOCUMENTOS_TEXTO               | 425 | OFICINAPARAMOFICINA            |
-| 126 | DOSSIERSFILES                  | 426 | OFICINAPERITO                  |
-| 127 | EDOIMPDETERMINACION            | 427 | OFICINASECUENCIAORDCAP         |
-| 128 | EDOINTPER                      | 428 | OFICINASOLICITUDDEFENSOR       |
-| 129 | EDOJURIDICOEXP                 | 429 | OFICINATIPO                    |
-| 130 | EDOJURIDICOIMP                 | 430 | OFICINATIPOJUZGADO             |
-| 131 | EMPLEADO                       | 431 | OFICINATIPOREMISION            |
-| 132 | EMPLEADOAUTCAMBIOAREA          | 432 | OFICINATIPOUNIDADINVESTIGACION |
-| 133 | EMPLEADOBITACORAAUTORIZACION   | 433 | OFICINATURNOJUEZ               |
-| 134 | EMPLEADOHUELLA                 | 434 | OFICONFGSESION                 |
-| 135 | EMPLEADOPROCESO                | 435 | ORA_ASPNET_APPLICATIONS        |
-| 136 | EMPLEADOPUESTO                 | 436 | ORA_ASPNET_MEMBERSHIP          |
-| 137 | EMPLEADOSECCION                | 437 | ORA_ASPNET_ROLES               |
-| 138 | ENDECA_NARRACION_HECHO         | 438 | ORA_ASPNET_USERS               |
-| 139 | ENTIDAD                        | 439 | ORA_ASPNET_USERSINROLES        |
-| 140 | ERRORES_SOLPJ                  | 440 | PAIS                           |
-| 141 | ESTADO                         | 441 | PARAMALMACEN                   |
-| 142 | ESTADOCAUSAPENAL               | 442 | PARAMETRO                      |
-| 143 | ESTADOEXTRANJERO               | 443 | PARAMETROOFICINA               |
-| 144 | ESTADOIMPUTADODEFENSOR         | 444 | PARAMETROREPORTE               |
-| 145 | ESTADOSOLICITUDPERICIAL        | 445 | PARAMETROSISTEMA               |
-| 146 | ETAPAIMPUTADO                  | 446 | PARAMETROSREGLASTIPO           |
-| 147 | EVENTOEDOJURIDICOEXP           | 447 | PARAMETROTIPO                  |
-| 148 | EVITIPOACCION                  | 448 | PERSONACALIDADJURIDICA         |
-| 149 | EVITIPOACCIONSTATUSOBJETO      | 449 | PERSONAEDOCIVIL                |
-| 150 | EXHORTOAUTORIDAD               | 450 | PERSONAESCOLARIDAD             |
-| 151 | EXPABOGADO                     | 451 | PERSONAESTADOPSICOFISICO       |
-| 152 | EXPACCESOPROCESO               | 452 | PERSONAETNIA                   |
-| 153 | EXPALARMAACCESO                | 453 | PERSONAHECHO                   |
-| 154 | EXPALARMAPERSONAFIS            | 454 | PERSONAHECHOHUELLA             |
-| 155 | EXPANEXBITALMACEN              | 455 | PERSONAIDIOMA                  |
-| 156 | EXPARCHEXTSECRETO              | 456 | PERSONALUGARDISPOSICION        |
-| 157 | EXPARCHIVOEXTERNO              | 457 | PERSONAMORALGIRO               |
-| 158 | EXPARCHIVOEXTERNOJUZGADO       | 458 | PERSONAMOTIVODETENCION         |
-| 159 | EXPAUTORIZAREASIGNACION        | 459 | PERSONANACIONALIDAD            |
-| 160 | EXPBITACORA                    | 460 | PERSONANOTIFICACION            |
-| 161 | EXPBITACORAACCESOPROCESO       | 461 | PERSONAOCUPACION               |
-| 162 | EXPBITACORAACUMULACION         | 462 | PERSONAPARENTESCO              |
-| 163 | EXPBITACORABANDEJAENTRADA      | 463 | PERSONARELIGION                |
-| 164 | EXPBITACORACAMBIOTURNO         | 464 | PERSONAS_DESAPARECIDAS         |
-| 165 | EXPBITACORACONCLUIR            | 465 | PERSONATIPOIDENTIFICACION      |
-| 166 | EXPBITACORACONVENIO            | 466 | PERSONATIPOMUERTE              |
-| 167 | EXPBITACORAEDOJURIDICO         | 467 | PERS_DESAPARECIDAS_BDREPO      |
-| 168 | EXPBITACORAFISICO              | 468 | PJ_JUEZ                        |
-| 169 | EXPBITACORAMENSAJE             | 469 | PJ_JUZGADO                     |
-| 170 | EXPBITACORAORDCAP              | 470 | PJ_SOLICITUD                   |
-| 171 | EXPBITACORAORDCAPIMP           | 471 | PJ_TIPODESPACHO                |
-| 172 | EXPBITACORAPADRONVEHICULAR     | 472 | PJ_TIPOPROMOCION               |
-| 173 | EXPBITACORAREACTIVAR           | 473 | PJ_TIPOPROMOCION_TIPODESPACHO  |
-| 174 | EXPBITACORAREMISION            | 474 | PLANTILLA                      |
-| 175 | EXPBITACORATEMPORAL            | 475 | PLANTILLAASOCIADA              |
-| 176 | EXPBITCAPIMPUTADOHUELLA        | 476 | PLANTILLAGRUPO                 |
-| 177 | EXPBITCONCLUSIONJUSTALT        | 477 | PLANTILLAVARIABLE              |
-| 178 | EXPBITPERSFISIMPDEFENSOR       | 478 | PROCESO                        |
-| 179 | EXPCITACION                    | 479 | PROCESOACCESOEXP               |
-| 180 | EXPDOCAGENDA                   | 480 | PROCVALATENCIU                 |
-| 181 | EXPDOCALARMA                   | 481 | PUBLICACION                    |
-| 182 | EXPDOCBANENTRADA               | 482 | PUBLICACIONBITACORA            |
-| 183 | EXPDOCBITALMACEN               | 483 | RANGOSTIEMPOATENCION           |
-| 184 | EXPDOCCALIFDICTAMENPERICIAL    | 484 | RECORDATORIO                   |
-| 185 | EXPDOCCITACION                 | 485 | RECURSOINTERPONE               |
-| 186 | EXPDOCDELITO                   | 486 | RECURSOMOTIVONOADMISION        |
-| 187 | EXPDOCEMPLEADOHUELLA           | 487 | RECURSOTIPO                    |
-| 188 | EXPDOCFISCAL                   | 488 | RECURSOTIPOOFICINATIPO         |
-| 189 | EXPDOCOBJETO                   | 489 | RECURSOTIPORESCATALOGO         |
-| 190 | EXPDOCOFICINAENVIO             | 490 | REGISTRO                       |
-| 191 | EXPDOCPERSONAFIS               | 491 | REGISTROPERSONACALIDADJURIDICA |
-| 192 | EXPDOCPERSONAMORAL             | 492 | REGISTROS_INTERFACES           |
-| 193 | EXPDOCRELACIONEDOFIS           | 493 | RESALARMA                      |
-| 194 | EXPDOCRELACIONFISFIS           | 494 | RESCATALOGO                    |
-| 195 | EXPDOCRELACIONMORALFIS         | 495 | RESCATALOGORES                 |
-| 196 | EXPDOCRELACIONPARENTESCO       | 496 | RESEDOJURIDICOIMP              |
-| 197 | EXPDOCTOBITACORA               | 497 | RESOLUCION                     |
-| 198 | EXPDOCTOFECHAPRESCRIPCION      | 498 | RESOLUCIONPENA                 |
-| 199 | EXPDOCTOSECRETO                | 499 | RESRESULTADORECURSO            |
-| 200 | EXPDOCUMENTOCALIFICACION       | 500 | RESULTADOAUDIENCIA             |
-| 201 | EXPDOCVARIABLE                 | 501 | RESVARIABLERES                 |
-| 202 | EXPDOCVEHICULO                 | 502 | ROLCONSPARAM                   |
-| 203 | EXPDOCVER                      | 503 | ROLESTIPO                      |
-| 204 | EXPEDIENTE                     | 504 | ROLOPCIONPROCESO               |
-| 205 | EXPEDIENTEACCESO               | 505 | ROLPROCESO                     |
-| 206 | EXPEDIENTEALARMA               | 506 | ROLSECCION                     |
-| 207 | EXPEDIENTEBANDEJAENTRADA       | 507 | ROL_GUARDIA                    |
-| 208 | EXPEDIENTEBITACORASEGURIDAD    | 508 | RUBROAUDIENCIATIPO             |
-| 209 | EXPEDIENTECAMBIOS              | 509 | RUTAALMACENAMIENTO             |
-| 210 | EXPEDIENTECATEO                | 510 | SALA                           |
-| 211 | EXPEDIENTECATEOARCHIVOEXT      | 511 | SECCION                        |
-| 212 | EXPEDIENTECATEODELITO          | 512 | SECTOR                         |
-| 213 | EXPEDIENTECAUSAPENAL           | 513 | SECUENCIAATENCION              |
-| 214 | EXPEDIENTECAUSAPENALRESOLUCION | 514 | SENTSTATUS                     |
-| 215 | EXPEDIENTECONVENIO             | 515 | SERVPERCORRELATIVO             |
-| 216 | EXPEDIENTECONVENIODETALLE      | 516 | SITUACIONMIGRATORIA            |
-| 217 | EXPEDIENTECORRELATIVO          | 517 | SOCIEDAD                       |
-| 218 | EXPEDIENTEDOCTONOTIFICACION    | 518 | SOLICITUDPERICIAL              |
-| 219 | EXPEDIENTEDOCUMENTO            | 519 | SOLICITUDPERICIALARCHEXT       |
-| 220 | EXPEDIENTEDOCUMENTOBORRADO     | 520 | SOLICITUDPERICIALDOCUMENTO     |
-| 221 | EXPEDIENTEDOCUMENTOCONVENIO    | 521 | SOLICITUDPERICIALEXPEDIENTE    |
-| 222 | EXPEDIENTEEVIDENCIA            | 522 | SOLICITUDPERICIALEXTERNA       |
-| 223 | EXPEDIENTEEXPEDIENTE           | 523 | SOLICITUDPERICIALINTERVENCION  |
-| 224 | EXPEDIENTEFISICO               | 524 | SOLICITUDPERICIALMANUAL        |
-| 225 | EXPEDIENTEJUSTICIAALTERNA      | 525 | SOLICITUDPERICIAL_RESP         |
-| 226 | EXPEDIENTEMENSAJE              | 526 | SOLPERARCHEXTREGENTREGA        |
-| 227 | EXPEDIENTEMENSAJE_ENS          | 527 | SOLPERAREAASIG                 |
-| 228 | EXPEDIENTEMENSAJE_TIJ          | 528 | SOLPERAREAASIGDETALLE          |
-| 229 | EXPEDIENTEOBJETO               | 529 | SOLPERCORRELATIVO              |
-| 230 | EXPEDIENTEORDENCAPTURA         | 530 | SOLPERDOCTOREGENTREGA          |
-| 231 | EXPEDIENTEPERSONAFISICA        | 531 | SOLPERICIALOFIASIGDETALLE      |
-| 232 | EXPEDIENTEPERSONAMORAL         | 532 | SOLPERICIALOFIASIGNACION       |
-| 233 | EXPEDIENTEREPORTE              | 533 | SSPE_FOLIO_CONFIRMACION        |
-| 234 | EXPEDIENTESOCIEDAD             | 534 | SSPE_RECEPCION                 |
-| 235 | EXPEDIENTESOLICITUD            | 535 | SSPE_SOLICITUD                 |
-| 236 | EXPEDIENTETIPOATENCION         | 536 | SSPE_SOLICITUD_STATUS          |
-| 237 | EXPEDIENTEVEHICULO             | 537 | SSPE_TIPOSOLICITUD             |
-| 238 | EXPEVIMOVIMIENTO               | 538 | STATUSALMACEN                  |
-| 239 | EXPEVIMOVIMIENTOBAJA           | 539 | STATUSDOC                      |
-| 240 | EXPEVIMOVIMIENTODEVOLUCION     | 540 | STATUSEXPFISICO                |
-| 241 | EXPEVIMOVIMIENTOOBJETO         | 541 | STATUSIMPORDCAP                |
-| 242 | EXPEVIMOVIMIENTOPRESTAMO       | 542 | STATUSOBJETOEVI                |
-| 243 | EXPEVIMOVIMIENTOREGISTRO       | 543 | STATUSOFICIOEVI                |
-| 244 | EXPFISICOBAJA                  | 544 | STATUSORDCAP                   |
-| 245 | EXPFISICODEVOLUCION            | 545 | STATUSSOL                      |
-| 246 | EXPFISICOMOVIMIENTO            | 546 | TIPOALARMA                     |
-| 247 | EXPFISICOPRESTAMO              | 547 | TIPOALARMAOFICINATIPO          |
-| 248 | EXPFISICOREACTIVACION          | 548 | TIPOAPERCIBIMIENTO             |
-| 249 | EXPFISICOUBICACION             | 549 | TIPOASENTAMIENTO               |
-| 250 | EXPIMPBITACORADETENIDO         | 550 | TIPOASESORJURIDICO             |
-| 251 | EXPIMPBITACORADETENIDOORDCAP   | 551 | TIPOATENCION                   |
-| 252 | EXPIMPBITACORAEDOJURIDICO      | 552 | TIPOATENCIONVICTIMA            |
-| 253 | EXPIMPBITACORAETAPA            | 553 | TIPOCONCLUSIONATENCION         |
-| 254 | EXPJUEZ                        | 554 | TIPODISCAPACIDAD               |
-| 255 | EXPJUSTICIAALTERNAPERSONA      | 555 | TIPOEXPEDIENTE                 |
-| 256 | EXPMANDAMIENTOAUTREASIG        | 556 | TIPOEXPEDIENTEELEVAR           |
-| 257 | EXPMENSAJEERROR                | 557 | TIPOEXPEDOJURIDICO             |
-| 258 | EXPMENSAJESECUENCIA            | 558 | TIPOEXPOFITIPOREMISION         |
-| 259 | EXPMOTIVOREACTIVACION          | 559 | TIPOHECHOCARPETA               |
-| 260 | EXPNOTIFICACIONSEJAP           | 560 | TIPOINICIOCARPETA              |
-| 261 | EXPOBJETODETENIDO              | 561 | TIPOLGBT                       |
-| 262 | EXPOBJETOREINCIDENCIA          | 562 | TIPOMANDAMIENTO                |
-| 263 | EXPOBJPLACASREINCIDENCIA       | 563 | TIPOMONEDA                     |
-| 264 | EXPOBJVEHPLACASREINCIDENCIA    | 564 | TIPOMOTIVOREASIG               |
-| 265 | EXPOFICINAACTUAL               | 565 | TIPOPROCEDIMIENTO              |
-| 266 | EXPOFICIOEVI                   | 566 | TIPOTRAMITE                    |
-| 267 | EXPOFICIOEVIOBJETO             | 567 | TIPOVIALIDAD                   |
-| 268 | EXPORDCAPARCHIVOEXTERNO        | 568 | TIPOVICTIMA                    |
-| 269 | EXPORDCAPDELITO                | 569 | TIPOVIVIENDA                   |
-| 270 | EXPORDCAPDOC                   | 570 | TURNOACTUALOFICINA             |
-| 271 | EXPORDCAPIMP                   | 571 | TURNOACTUALOFICINAACCESOEXP    |
-| 272 | EXPORDCAPPERSONAFIS            | 572 | TURNOACTUALOFICINABITACORA     |
-| 273 | EXPORDCAPPERSONAFISALIAS       | 573 | TURNOACTUALOFICINAEMPLEADO     |
-| 274 | EXPORDCAPPERSONAFISDOMICILIO   | 574 | TURNOJUEZ                      |
-| 275 | EXPORDCAPPERSONAFISIMP         | 575 | UNIDADMEDIDA                   |
-| 276 | EXPORDCAPPERSONAMORAL          | 576 | VARIABLE                       |
-| 277 | EXPORDCAPRELACIONEDOFIS        | 577 | VARIABLEGRUPO                  |
-| 278 | EXPORDCAPRELACIONFISFIS        | 578 | VARIABLERELACION               |
-| 279 | EXPORDCAPRELACIONMORALFIS      | 579 | VARIABLERES                    |
-| 280 | EXPPERFISASISTEAUDIENCIA       | 580 | VARIABLERESCATALOGO            |
-| 281 | EXPPERSONAFISABOGADO           | 581 | VARIABLERESCATALOGOVALOR       |
-| 282 | EXPPERSONAFISALIAS             | 582 | VARIABLETEXTO                  |
-| 283 | EXPPERSONAFISDOMICILIO         | 583 | VARIABLETEXTOVARIABLE          |
-| 284 | EXPPERSONAFISIMP               | 584 | VEHICULOCOLOR                  |
-| 285 | EXPPERSONAFISIMPDEFENSOR       | 585 | VEHICULODISTRIBUIDOR           |
-| 286 | EXPPERSONAFISIMPDELITO         | 586 | VEHICULOLUGARRESGUARDO         |
-| 287 | EXPPERSONAFISIMPDELITOCARAC    | 587 | VEHICULOMARCA                  |
-| 288 | EXPPERSONAFISIMP_IMPUTADO      | 588 | VEHICULOMODELO                 |
-| 289 | EXPPERSONAFISMEDIAFILIACION    | 589 | VEHICULOSERVICIO               |
-| 290 | EXPPERSONAFISSENAS             | 590 | VEHICULOSITUACION              |
-| 291 | EXPPERSONAHECHO_PERSONAHECHO   | 591 | VEHICULOSTATUS                 |
-| 292 | EXPPERSONAMORALABOGADO         | 592 | VEHICULOTIPO                   |
-| 293 | EXPPERSONAMORALREINCIDENCIA    | 593 | VEHICULOVERSION                |
-| 294 | EXPPERSONAREINCIDENCIA         | 594 | VIALIDAD                       |
-| 295 | EXPRELACIONEDOFIS              | 595 | VIALIDADCOLONIA                |
-| 296 | EXPRELACIONFISFIS              | 596 | _prisma_migrations             |
-| 297 | EXPRELACIONMORALFIS            |     |                                |
-| 298 | EXPRELACIONPARENTESCO          |     |                                |
-| 299 | EXPSOLARCHIVOEXTERNO           |     |                                |
-| 300 | EXPSOLAUTORIZAREASIGNACION     |     |                                |
+1 ACCIONSEGUIR
 
-Para consultar la totalidad de las tablas y sus campos, por favor dar clic en el siguiente enlace. [Esquema de base de datos.](https://d.docs.live.net/ea11a607a235c9dd/Escritorio/Documentaci%C3%B3n%20FW/Esquemas%20de%20tablas%20de%20la%20BD%20Fiscalia%20Web.docx)
+2 ACTIVIDADMEDIACION
+
+3 ACTIVIDADTIPO
+
+4 AGENDA
+
+5 AGENDAAUDIENCIA
+
+6 AGENDAAUDIENCIAREPROGRAMADA
+
+7 AGENDADIAS
+
+8 AGENDAESPECIFICA
+
+9 AGENDAPARTICIPA
+
+10 AGENDAPARTICIPARECORDATORIO
+
+11 AGENDAPRIORIDAD
+
+12 AREA
+
+13 AREAABRIRRACDESPUESCREAR
+
+14 AREAAGENDA
+
+15 AREAAUTOASIGNACION
+
+16 AREAN
+
+17 AREAPERICIAL
+
+18 AREAPERITO
+
+19 AREASREGLAS
+
+20 AREASTIPOREGLAS
+
+21 AREATIPO
+
+22 AREATIPOPROCEDIMIENTO
+
+23 ASIGNAESCRIBIENTE
+
+24 ASIGNAJUEZ
+
+25 ASIGNAJUEZBITACORA
+
+26 ASIGNAJUEZSENT
+
+27 ASIGNANOTIFICADOR
+
+28 ASIGNASECUENCIAL
+
+29 ASIGNASECUENCIALSOLICITUD
+
+30 ATENCIONCIUDADANA
+
+31 ATENCIONCIUDADANAESTATUS
+
+32 AUDIENCIA
+
+33 AUDIENCIAREPROGRAMACIONMOTIVO
+
+34 AUDIENCIAREPROGRAMADA
+
+35 AUDIENCIATIPO
+
+36 AUDIENCIA\_PJ\_SOLICITUD
+
+37 AUTORIDAD
+
+38 AUTORIDADSOLPERICIAL
+
+39 AUTORIDADTIPO
+
+40 AVISOCANALIZACION
+
+41 AYUDATOPICO
+
+42 BANDEJAENTRADA
+
+43 BANDEJAENTRADATIPO
+
+44 BITACORAACCION
+
+45 BITACORAACCIONESPECIFICA
+
+46 BITACORABLOQUEO
+
+47 BITACORACORRELATIVOERROR
+
+48 BITACORADOCUMENTO
+
+49 BITACORAMOVIMIENTOAREAEMPLEADO
+
+50 BITACORAMOVIMIENTOOBJETO
+
+51 BITACORAOPERACION
+
+52 BITACORAOPERACION3
+
+53 BITASIGAVISO
+
+54 BITDOCTOSECRETO
+
+55 BITEMPAUTCAMBIOAREA
+
+56 BITENVIOCORREO
+
+57 BITEXPNOTIFICACIONSEJAP
+
+58 BITINTCONT
+
+59 BITINTCONTDET
+
+60 BITINTENTODESBLOQUEOERRONEO
+
+61 BITMSGINCORPORADOMANUAL
+
+62 BITREACARCH
+
+63 BITREGRESOINTERVENCION
+
+64 BITRELSOLPEREXPEDIENTE
+
+65 BITSEGUIMIENTOAUDIENCIA
+
+66 BITSEGUIMIENTOCITACION
+
+67 BITTRAAVISO
+
+68 CALIFICACIONDELITO
+
+69 CATALOGOONG
+
+70 CATEOMOTIVO
+
+71 CATEOTIPOLUGAR
+
+72 CAT\_MENSAJES\_DOCTO
+
+73 CERESO
+
+74 CLADOCALARMA
+
+75 CLADOCASIGNAJUEZ
+
+76 CLADOCAUDIENCIATIPO
+
+77 CLADOCDEFSINACCESO
+
+78 CLADOCDELITO
+
+79 CLADOCEDOJURIDICOEXP
+
+80 CLADOCEDOJURIDICOIMP
+
+81 CLADOCETAPAIMP
+
+82 CLADOCEVITIPOACCION
+
+83 CLADOCOBJETOSITUACION
+
+84 CLADOCOFICINATIPO
+
+85 CLADOCOFICINATIPOENVIO
+
+86 CLADOCPLANTILLA
+
+87 CLADOCREQUERIMIENTOFISCAL
+
+88 CLADOCRES
+
+89 CLADOCROLES
+
+90 CLADOCSTATUSIMPORDCAP
+
+91 CLADOCTIPOEXP
+
+92 CLADOCTOCONFIGCLADOCTO
+
+93 CLADOCTOCONFIGPJCLADOCTO
+
+94 CLADOCTOINSTENVIO
+
+95 CLADOCTOTIPOAPERCIBIMIENTO
+
+96 CLADOCTO\_PJ\_TIPOPROMOCION
+
+97 CLADOCVARIABLE
+
+98 CLADOCVEHICULOSITUACION
+
+99 CLADOCVEHICULOSTATUS
+
+100 CLADOC\_SSPE\_TIPOSOLICITUD
+
+101 CLASIFICACIONDOCTO
+
+102 CLASIFICACIONDOCTOMODULO
+
+103 COLONIA
+
+104 COLONIAVIALIDAD
+
+105 CONFIGACCESS
+
+106 CONFIGCLADOCTO
+
+107 CONFIGCLADOCTOPJ
+
+108 CONTROL\_BAJAS
+
+109 CONVENIOSTATUS
+
+110 COORDINACION
+
+111 COORDINACIONTIPO
+
+112 CORRELATIVOERROR
+
+113 DEFENSOR
+
+114 DELEGACION
+
+115 DELITOCAPITULO
+
+116 DELITOCARACTERISTICA
+
+117 DELITOFORMAACCION
+
+118 DELITOINSTRUMENTOCOMISION
+
+119 DELITOMODALIDAD
+
+120 DELITOMODALIDADCOMISION
+
+121 DELITOMODALIDADROBOVEHICULO
+
+122 DELITOTIPOAPERCIBIMIENTO
+
+123 DELITOTITULO
+
+124 DOCTOSIMP
+
+125 DOCUMENTOS\_TEXTO
+
+126 DOSSIERSFILES
+
+127 EDOIMPDETERMINACION
+
+128 EDOINTPER
+
+129 EDOJURIDICOEXP
+
+130 EDOJURIDICOIMP
+
+131 EMPLEADO
+
+132 EMPLEADOAUTCAMBIOAREA
+
+133 EMPLEADOBITACORAAUTORIZACION
+
+134 EMPLEADOHUELLA
+
+135 EMPLEADOPROCESO
+
+136 EMPLEADOPUESTO
+
+137 EMPLEADOSECCION
+
+138 ENDECA\_NARRACION\_HECHO
+
+139 ENTIDAD
+
+140 ERRORES\_SOLPJ
+
+141 ESTADO
+
+142 ESTADOCAUSAPENAL
+
+143 ESTADOEXTRANJERO
+
+144 ESTADOIMPUTADODEFENSOR
+
+145 ESTADOSOLICITUDPERICIAL
+
+146 ETAPAIMPUTADO
+
+147 EVENTOEDOJURIDICOEXP
+
+148 EVITIPOACCION
+
+149 EVITIPOACCIONSTATUSOBJETO
+
+150 EXHORTOAUTORIDAD
+
+151 EXPABOGADO
+
+152 EXPACCESOPROCESO
+
+153 EXPALARMAACCESO
+
+154 EXPALARMAPERSONAFIS
+
+155 EXPANEXBITALMACEN
+
+156 EXPARCHEXTSECRETO
+
+157 EXPARCHIVOEXTERNO
+
+158 EXPARCHIVOEXTERNOJUZGADO
+
+159 EXPAUTORIZAREASIGNACION
+
+160 EXPBITACORA
+
+161 EXPBITACORAACCESOPROCESO
+
+162 EXPBITACORAACUMULACION
+
+163 EXPBITACORABANDEJAENTRADA
+
+164 EXPBITACORACAMBIOTURNO
+
+165 EXPBITACORACONCLUIR
+
+166 EXPBITACORACONVENIO
+
+167 EXPBITACORAEDOJURIDICO
+
+168 EXPBITACORAFISICO
+
+169 EXPBITACORAMENSAJE
+
+170 EXPBITACORAORDCAP
+
+171 EXPBITACORAORDCAPIMP
+
+172 EXPBITACORAPADRONVEHICULAR
+
+173 EXPBITACORAREACTIVAR
+
+174 EXPBITACORAREMISION
+
+175 EXPBITACORATEMPORAL
+
+176 EXPBITCAPIMPUTADOHUELLA
+
+177 EXPBITCONCLUSIONJUSTALT
+
+178 EXPBITPERSFISIMPDEFENSOR
+
+179 EXPCITACION
+
+180 EXPDOCAGENDA
+
+181 EXPDOCALARMA
+
+182 EXPDOCBANENTRADA
+
+183 EXPDOCBITALMACEN
+
+184 EXPDOCCALIFDICTAMENPERICIAL
+
+185 EXPDOCCITACION
+
+186 EXPDOCDELITO
+
+187 EXPDOCEMPLEADOHUELLA
+
+188 EXPDOCFISCAL
+
+189 EXPDOCOBJETO
+
+190 EXPDOCOFICINAENVIO
+
+191 EXPDOCPERSONAFIS
+
+192 EXPDOCPERSONAMORAL
+
+193 EXPDOCRELACIONEDOFIS
+
+194 EXPDOCRELACIONFISFIS
+
+195 EXPDOCRELACIONMORALFIS
+
+196 EXPDOCRELACIONPARENTESCO
+
+197 EXPDOCTOBITACORA
+
+198 EXPDOCTOFECHAPRESCRIPCION
+
+199 EXPDOCTOSECRETO
+
+200 EXPDOCUMENTOCALIFICACION
+
+201 EXPDOCVARIABLE
+
+202 EXPDOCVEHICULO
+
+203 EXPDOCVER
+
+204 EXPEDIENTE
+
+205 EXPEDIENTEACCESO
+
+206 EXPEDIENTEALARMA
+
+207 EXPEDIENTEBANDEJAENTRADA
+
+208 EXPEDIENTEBITACORASEGURIDAD
+
+209 EXPEDIENTECAMBIOS
+
+210 EXPEDIENTECATEO
+
+211 EXPEDIENTECATEOARCHIVOEXT
+
+212 EXPEDIENTECATEODELITO
+
+213 EXPEDIENTECAUSAPENAL
+
+214 EXPEDIENTECAUSAPENALRESOLUCION
+
+215 EXPEDIENTECONVENIO
+
+216 EXPEDIENTECONVENIODETALLE
+
+217 EXPEDIENTECORRELATIVO
+
+218 EXPEDIENTEDOCTONOTIFICACION
+
+219 EXPEDIENTEDOCUMENTO
+
+220 EXPEDIENTEDOCUMENTOBORRADO
+
+221 EXPEDIENTEDOCUMENTOCONVENIO
+
+222 EXPEDIENTEEVIDENCIA
+
+223 EXPEDIENTEEXPEDIENTE
+
+224 EXPEDIENTEFISICO
+
+225 EXPEDIENTEJUSTICIAALTERNA
+
+226 EXPEDIENTEMENSAJE
+
+227 EXPEDIENTEMENSAJE\_ENS
+
+228 EXPEDIENTEMENSAJE\_TIJ
+
+229 EXPEDIENTEOBJETO
+
+230 EXPEDIENTEORDENCAPTURA
+
+231 EXPEDIENTEPERSONAFISICA
+
+232 EXPEDIENTEPERSONAMORAL
+
+233 EXPEDIENTEREPORTE
+
+234 EXPEDIENTESOCIEDAD
+
+235 EXPEDIENTESOLICITUD
+
+236 EXPEDIENTETIPOATENCION
+
+237 EXPEDIENTEVEHICULO
+
+238 EXPEVIMOVIMIENTO
+
+239 EXPEVIMOVIMIENTOBAJA
+
+240 EXPEVIMOVIMIENTODEVOLUCION
+
+241 EXPEVIMOVIMIENTOOBJETO
+
+242 EXPEVIMOVIMIENTOPRESTAMO
+
+243 EXPEVIMOVIMIENTOREGISTRO
+
+244 EXPFISICOBAJA
+
+245 EXPFISICODEVOLUCION
+
+246 EXPFISICOMOVIMIENTO
+
+247 EXPFISICOPRESTAMO
+
+248 EXPFISICOREACTIVACION
+
+249 EXPFISICOUBICACION
+
+250 EXPIMPBITACORADETENIDO
+
+251 EXPIMPBITACORADETENIDOORDCAP
+
+252 EXPIMPBITACORAEDOJURIDICO
+
+253 EXPIMPBITACORAETAPA
+
+254 EXPJUEZ
+
+255 EXPJUSTICIAALTERNAPERSONA
+
+256 EXPMANDAMIENTOAUTREASIG
+
+257 EXPMENSAJEERROR
+
+258 EXPMENSAJESECUENCIA
+
+259 EXPMOTIVOREACTIVACION
+
+260 EXPNOTIFICACIONSEJAP
+
+261 EXPOBJETODETENIDO
+
+262 EXPOBJETOREINCIDENCIA
+
+263 EXPOBJPLACASREINCIDENCIA
+
+264 EXPOBJVEHPLACASREINCIDENCIA
+
+265 EXPOFICINAACTUAL
+
+266 EXPOFICIOEVI
+
+267 EXPOFICIOEVIOBJETO
+
+268 EXPORDCAPARCHIVOEXTERNO
+
+269 EXPORDCAPDELITO
+
+270 EXPORDCAPDOC
+
+271 EXPORDCAPIMP
+
+272 EXPORDCAPPERSONAFIS
+
+273 EXPORDCAPPERSONAFISALIAS
+
+274 EXPORDCAPPERSONAFISDOMICILIO
+
+275 EXPORDCAPPERSONAFISIMP
+
+276 EXPORDCAPPERSONAMORAL
+
+277 EXPORDCAPRELACIONEDOFIS
+
+278 EXPORDCAPRELACIONFISFIS
+
+279 EXPORDCAPRELACIONMORALFIS
+
+280 EXPPERFISASISTEAUDIENCIA
+
+281 EXPPERSONAFISABOGADO
+
+282 EXPPERSONAFISALIAS
+
+283 EXPPERSONAFISDOMICILIO
+
+284 EXPPERSONAFISIMP
+
+285 EXPPERSONAFISIMPDEFENSOR
+
+286 EXPPERSONAFISIMPDELITO
+
+287 EXPPERSONAFISIMPDELITOCARAC
+
+288 EXPPERSONAFISIMP\_IMPUTADO
+
+289 EXPPERSONAFISMEDIAFILIACION
+
+290 EXPPERSONAFISSENAS
+
+291 EXPPERSONAHECHO\_PERSONAHECHO
+
+292 EXPPERSONAMORALABOGADO
+
+293 EXPPERSONAMORALREINCIDENCIA
+
+294 EXPPERSONAREINCIDENCIA
+
+295 EXPRELACIONEDOFIS
+
+296 EXPRELACIONFISFIS
+
+297 EXPRELACIONMORALFIS
+
+298 EXPRELACIONPARENTESCO
+
+299 EXPSOLARCHIVOEXTERNO
+
+300 EXPSOLAUTORIZAREASIGNACION
+
+301 EXPSOLBANDEJAENTRADA
+
+302 EXPSOLBITACORABANDEJAENTRADA
+
+303 EXPSOLBITACORAESTADO
+
+304 EXPSOLDOC
+
+305 EXPVEHICULODETENIDO
+
+306 EXPVEHICULORECUPERADO
+
+307 EXPVEHICULOREINCIDENCIA
+
+308 EXPVEHOBJPLACASREINCIDENCIA
+
+309 EXPVICCANALIZADA
+
+310 EXPVICFICHAELEC
+
+311 FICHA
+
+312 FICHAPERSONAFISICA
+
+313 FICHAPERSONAFISMEDIAFILIACION
+
+314 FUERO
+
+315 GRADOPARTICIPACION
+
+316 HECHOCLASIFICACIONLUGAR
+
+317 HECHOLUGAR
+
+318 HUELLA
+
+319 IMPUTADO
+
+320 IMPUTADOHUELLA
+
+321 INSTANCIASOLICITAREASIG
+
+322 INSTITUCION
+
+323 INSTITUCIONENVIO
+
+324 INSTITUCIONREMISION
+
+325 INSTITUCIONROL
+
+326 INTENCIONALIDAD
+
+327 INTERVENCION
+
+328 JUEZ
+
+329 JUEZTURNOJUEZ
+
+330 LOCALIDAD
+
+331 MANDJUDIMPSTATUS
+
+332 MANDJUDSTATUS
+
+333 MAND\_REPBC
+
+334 MEDIOCONOCIMIENTO
+
+335 MEDIOSOLICITUDPERICIAL
+
+336 MENSAJERIASTATUS
+
+337 MENSAJESPJ\_NUEVOS
+
+338 MENSAJES\_PERSONAS
+
+339 MF\_BARBAPECULIAR
+
+340 MF\_BARBATAMANO
+
+341 MF\_BARBILLAFORMA
+
+342 MF\_BARBILLAINCLINACION
+
+343 MF\_BARBILLAPECULIAR
+
+344 MF\_BARBILLATAMANO
+
+345 MF\_BIGOTEFORMA
+
+346 MF\_BIGOTEGROSOR
+
+347 MF\_BIGOTEPECULIAR
+
+348 MF\_BIGOTETAMANO
+
+349 MF\_BOCAPECULIAR
+
+350 MF\_BOCATAMANO
+
+351 MF\_CABELLOCOLOR
+
+352 MF\_CABELLOESTILO
+
+353 MF\_CABELLOPECULIAR
+
+354 MF\_CABELLOTAMANO
+
+355 MF\_CABEZAFORMA
+
+356 MF\_CABEZATAMANO
+
+357 MF\_CARAFORMA
+
+358 MF\_CARATAMANO
+
+359 MF\_CARATEZ
+
+360 MF\_CEJACOLOCACION
+
+361 MF\_CEJAFORMA
+
+362 MF\_CEJAGROSOR
+
+363 MF\_CEJATAMANO
+
+364 MF\_CONTEXTURA
+
+365 MF\_CUELLOGROSOR
+
+366 MF\_CUELLOPECULIAR
+
+367 MF\_CUELLOTAMANO
+
+368 MF\_DIENTEPECULIAR
+
+369 MF\_DIENTETAMANO
+
+370 MF\_DIENTETIPO
+
+371 MF\_ESTOMAGO
+
+372 MF\_FIGURA
+
+373 MF\_FRENTEALTURA
+
+374 MF\_FRENTEANCHURA
+
+375 MF\_FRENTEFORMA
+
+376 MF\_FRENTEPECULIAR
+
+377 MF\_HOMBROGROSOR
+
+378 MF\_HOMBROLONGITUD
+
+379 MF\_HOMBROPOSICION
+
+380 MF\_LABIOGROSOR
+
+381 MF\_LABIOLONGITUD
+
+382 MF\_LABIOPECULIAR
+
+383 MF\_LABIOPOSICION
+
+384 MF\_NARIZBASE
+
+385 MF\_NARIZPECULIAR
+
+386 MF\_NARIZTAMANO
+
+387 MF\_NARIZTIPO
+
+388 MF\_OJOCOLOCACION
+
+389 MF\_OJOCOLOR
+
+390 MF\_OJOFORMA
+
+391 MF\_OJOPECULIAR
+
+392 MF\_OJOTAMANO
+
+393 MF\_OREJAFORMA
+
+394 MF\_OREJALOBULO
+
+395 MF\_OREJASEPARACION
+
+396 MF\_OREJATAMANO
+
+397 MF\_PIELCOLOR
+
+398 MF\_SENATIPO
+
+399 MODULO
+
+400 MOTIVOASIGNACION
+
+401 MOTIVOBAJAASIG
+
+402 MOTIVOCONCLUSIONJUSTALT
+
+403 MOTIVONOCELEBRACION
+
+404 MOTIVONONOTIFICA
+
+405 MOTIVOREACTIVACION
+
+406 MOTIVOREASIG
+
+407 MOTIVOREASIGTIPOMOTIVOREASIG
+
+408 MOTIVOREMISION
+
+409 MUNICIPIO
+
+410 NOMBRESCATALOGOS
+
+411 NUCSJUDICIALIZADOSPORAREA
+
+412 OBJETOCLACONSTEXT
+
+413 OBJETOCLASIFICACION
+
+414 OBJETOLUGARRESGUARDO
+
+415 OBJETOSITUACION
+
+416 OBJETOSUBCLASIFICACION
+
+417 OFICINA
+
+418 OFICINAAGENDA
+
+419 OFICINAAREAPERICIAL
+
+420 OFICINACENTROMEDIACION
+
+421 OFICINAENVIO
+
+422 OFICINAMENSAJERIA
+
+423 OFICINAMESACTRLASIGPER
+
+424 OFICINAN
+
+425 OFICINAPARAMOFICINA
+
+426 OFICINAPERITO
+
+427 OFICINASECUENCIAORDCAP
+
+428 OFICINASOLICITUDDEFENSOR
+
+429 OFICINATIPO
+
+430 OFICINATIPOJUZGADO
+
+431 OFICINATIPOREMISION
+
+432 OFICINATIPOUNIDADINVESTIGACION
+
+433 OFICINATURNOJUEZ
+
+434 OFICONFGSESION
+
+435 ORA\_ASPNET\_APPLICATIONS
+
+436 ORA\_ASPNET\_MEMBERSHIP
+
+437 ORA\_ASPNET\_ROLES
+
+438 ORA\_ASPNET\_USERS
+
+439 ORA\_ASPNET\_USERSINROLES
+
+440 PAIS
+
+441 PARAMALMACEN
+
+442 PARAMETRO
+
+443 PARAMETROOFICINA
+
+444 PARAMETROREPORTE
+
+445 PARAMETROSISTEMA
+
+446 PARAMETROSREGLASTIPO
+
+447 PARAMETROTIPO
+
+448 PERSONACALIDADJURIDICA
+
+449 PERSONAEDOCIVIL
+
+450 PERSONAESCOLARIDAD
+
+451 PERSONAESTADOPSICOFISICO
+
+452 PERSONAETNIA
+
+453 PERSONAHECHO
+
+454 PERSONAHECHOHUELLA
+
+455 PERSONAIDIOMA
+
+456 PERSONALUGARDISPOSICION
+
+457 PERSONAMORALGIRO
+
+458 PERSONAMOTIVODETENCION
+
+459 PERSONANACIONALIDAD
+
+460 PERSONANOTIFICACION
+
+461 PERSONAOCUPACION
+
+462 PERSONAPARENTESCO
+
+463 PERSONARELIGION
+
+464 PERSONAS\_DESAPARECIDAS
+
+465 PERSONATIPOIDENTIFICACION
+
+466 PERSONATIPOMUERTE
+
+467 PERS\_DESAPARECIDAS\_BDREPO
+
+468 PJ\_JUEZ
+
+469 PJ\_JUZGADO
+
+470 PJ\_SOLICITUD
+
+471 PJ\_TIPODESPACHO
+
+472 PJ\_TIPOPROMOCION
+
+473 PJ\_TIPOPROMOCION\_TIPODESPACHO
+
+474 PLANTILLA
+
+475 PLANTILLAASOCIADA
+
+476 PLANTILLAGRUPO
+
+477 PLANTILLAVARIABLE
+
+478 PROCESO
+
+479 PROCESOACCESOEXP
+
+480 PROCVALATENCIU
+
+481 PUBLICACION
+
+482 PUBLICACIONBITACORA
+
+483 RANGOSTIEMPOATENCION
+
+484 RECORDATORIO
+
+485 RECURSOINTERPONE
+
+486 RECURSOMOTIVONOADMISION
+
+487 RECURSOTIPO
+
+488 RECURSOTIPOOFICINATIPO
+
+489 RECURSOTIPORESCATALOGO
+
+490 REGISTRO
+
+491 REGISTROPERSONACALIDADJURIDICA
+
+492 REGISTROS\_INTERFACES
+
+493 RESALARMA
+
+494 RESCATALOGO
+
+495 RESCATALOGORES
+
+496 RESEDOJURIDICOIMP
+
+497 RESOLUCION
+
+498 RESOLUCIONPENA
+
+499 RESRESULTADORECURSO
+
+500 RESULTADOAUDIENCIA
+
+501 RESVARIABLERES
+
+502 ROLCONSPARAM
+
+503 ROLESTIPO
+
+504 ROLOPCIONPROCESO
+
+505 ROLPROCESO
+
+506 ROLSECCION
+
+507 ROL\_GUARDIA
+
+508 RUBROAUDIENCIATIPO
+
+509 RUTAALMACENAMIENTO
+
+510 SALA
+
+511 SECCION
+
+512 SECTOR
+
+513 SECUENCIAATENCION
+
+514 SENTSTATUS
+
+515 SERVPERCORRELATIVO
+
+516 SITUACIONMIGRATORIA
+
+517 SOCIEDAD
+
+518 SOLICITUDPERICIAL
+
+519 SOLICITUDPERICIALARCHEXT
+
+520 SOLICITUDPERICIALDOCUMENTO
+
+521 SOLICITUDPERICIALEXPEDIENTE
+
+522 SOLICITUDPERICIALEXTERNA
+
+523 SOLICITUDPERICIALINTERVENCION
+
+524 SOLICITUDPERICIALMANUAL
+
+525 SOLICITUDPERICIAL\_RESP
+
+526 SOLPERARCHEXTREGENTREGA
+
+527 SOLPERAREAASIG
+
+528 SOLPERAREAASIGDETALLE
+
+529 SOLPERCORRELATIVO
+
+530 SOLPERDOCTOREGENTREGA
+
+531 SOLPERICIALOFIASIGDETALLE
+
+532 SOLPERICIALOFIASIGNACION
+
+533 SSPE\_FOLIO\_CONFIRMACION
+
+534 SSPE\_RECEPCION
+
+535 SSPE\_SOLICITUD
+
+536 SSPE\_SOLICITUD\_STATUS
+
+537 SSPE\_TIPOSOLICITUD
+
+538 STATUSALMACEN
+
+539 STATUSDOC
+
+540 STATUSEXPFISICO
+
+541 STATUSIMPORDCAP
+
+542 STATUSOBJETOEVI
+
+543 STATUSOFICIOEVI
+
+544 STATUSORDCAP
+
+545 STATUSSOL
+
+546 TIPOALARMA
+
+547 TIPOALARMAOFICINATIPO
+
+548 TIPOAPERCIBIMIENTO
+
+549 TIPOASENTAMIENTO
+
+550 TIPOASESORJURIDICO
+
+551 TIPOATENCION
+
+552 TIPOATENCIONVICTIMA
+
+553 TIPOCONCLUSIONATENCION
+
+554 TIPODISCAPACIDAD
+
+555 TIPOEXPEDIENTE
+
+556 TIPOEXPEDIENTEELEVAR
+
+557 TIPOEXPEDOJURIDICO
+
+558 TIPOEXPOFITIPOREMISION
+
+559 TIPOHECHOCARPETA
+
+560 TIPOINICIOCARPETA
+
+561 TIPOLGBT
+
+562 TIPOMANDAMIENTO
+
+563 TIPOMONEDA
+
+564 TIPOMOTIVOREASIG
+
+565 TIPOPROCEDIMIENTO
+
+566 TIPOTRAMITE
+
+567 TIPOVIALIDAD
+
+568 TIPOVICTIMA
+
+569 TIPOVIVIENDA
+
+570 TURNOACTUALOFICINA
+
+571 TURNOACTUALOFICINAACCESOEXP
+
+572 TURNOACTUALOFICINABITACORA
+
+573 TURNOACTUALOFICINAEMPLEADO
+
+574 TURNOJUEZ
+
+575 UNIDADMEDIDA
+
+576 VARIABLE
+
+577 VARIABLEGRUPO
+
+578 VARIABLERELACION
+
+579 VARIABLERES
+
+580 VARIABLERESCATALOGO
+
+581 VARIABLERESCATALOGOVALOR
+
+582 VARIABLETEXTO
+
+583 VARIABLETEXTOVARIABLE
+
+584 VEHICULOCOLOR
+
+585 VEHICULODISTRIBUIDOR
+
+586 VEHICULOLUGARRESGUARDO
+
+587 VEHICULOMARCA
+
+588 VEHICULOMODELO
+
+589 VEHICULOSERVICIO
+
+590 VEHICULOSITUACION
+
+591 VEHICULOSTATUS
+
+592 VEHICULOTIPO
+
+593 VEHICULOVERSION
+
+594 VIALIDAD
+
+595 VIALIDADCOLONIA
+
+596 \_prisma\_migrations
 
 ## **Modelo de datos y relaciones**
 
 En esta sección, se proporciona una descripción detallada de cómo se modelan y relacionan los datos dentro del sistema, con el objetivo de facilitar la gestión eficiente de casos judiciales y expedientes. Este modelo abarca una serie de tablas y entidades clave, cada una con su propósito específico y campos asociados. Además, se explican las relaciones entre estas tablas, incluyendo la integridad referencial y las reglas de negocio que garantizan la consistencia de los datos.
 
-![](RackMultipart20240103-1-jfj6p2_html_99826672684e29db.png)
+![Shape9](RackMultipart20240116-1-7nwsn5_html_1a5b439d8ecde174.gif) ![Shape8](RackMultipart20240116-1-7nwsn5_html_21b5762e9cc4246a.gif) ![Shape7](RackMultipart20240116-1-7nwsn5_html_656d9a26916aba0d.gif) ![Shape6](RackMultipart20240116-1-7nwsn5_html_735eaf3a0e4b88b3.gif) ![Shape5](RackMultipart20240116-1-7nwsn5_html_735eaf3a0e4b88b3.gif) ![Shape4](RackMultipart20240116-1-7nwsn5_html_735eaf3a0e4b88b3.gif)
 
-**(Incluir enlaces a los documentos de bases de datos, esquemas, relaciones, tablas y relaciones que se encuentran el "folder Documentación FW")**
+Diagramas de relaciones
+
+Restricciones y relaciones
+
+Estructura de[https://d.docs.live.net/ea11a607a235c9dd/Escritorio/DOCUMENTACION%20OFICIAL%20FWeb/Docs%20Base%20de%20Datos/Estructura%20de%20tablas%20BD%20FWeb.docx](https://d.docs.live.net/ea11a607a235c9dd/Escritorio/DOCUMENTACION%20OFICIAL%20FWeb/Docs%20Base%20de%20Datos/Estructura%20de%20tablas%20BD%20FWeb.docx) tablas
+
+_NOTA: En los siguientes enlaces se podrá acceder al modelado de los datos y sus relaciones (en documento de Word usar Ctrl+clic para abrir)_
 
 ###
 ###
@@ -900,21 +1788,20 @@ Para acceder al sistema de la Fiscalía General del Estado de Baja California (F
 
 ## **Requerimientos de Software**
 
-1. Sistema Operativo:
+1. **Sistema Operativo:**
   - Windows 10 Pro, macOS Catalina o más reciente, o una distribución de Linux estable y segura para desktops.
   - Para dispositivos móviles, iOS última versión o Android última versión.
-
-1. Navegador Web:
+2. **Navegador Web:**
   - Última versión de Google Chrome, Mozilla Firefox, Safari o Microsoft Edge.
   - Soporte para JavaScript, cookies y HTML5.
-2. Herramientas de Seguridad:
+3. **Herramientas de Seguridad:**
   - Antivirus y antimalware actualizados.
   - Firewall habilitado y configurado adecuadamente.
-3. Software de Conectividad:
+4. **Software de Conectividad:**
   - VPN cliente si se requiere acceso remoto seguro.
   - Software específico de cliente para acceso a bases de datos o aplicaciones según sea necesario.
 
-## **Configuraciones Recomendables:**
+## **Configuraciones Recomendables**
 
 1. **Conexión a Internet:**
   - Uso de una conexión a internet por cable para estabilidad o una red Wi-Fi segura.
@@ -925,8 +1812,7 @@ Para acceder al sistema de la Fiscalía General del Estado de Baja California (F
 3. **Seguridad:**
   - Configurar políticas de contraseñas fuertes y autenticación de dos factores para el acceso a sistemas críticos.
   - Asegurarse de que todas las comunicaciones con la infraestructura de AWS se realicen a través de canales cifrados como HTTPS o conexiones VPN.
-
-1. **Formación y Soporte:**
+4. **Formación y Soporte:**
   - Proporcionar formación regular a los usuarios sobre prácticas de seguridad y uso eficiente de las herramientas.
   - Tener acceso a soporte técnico especializado para resolver incidencias rápidamente.
 
@@ -954,7 +1840,7 @@ _En Tránsito:_ Se emplea HTTPS con TLS para la encriptación de datos en tráns
 
 _Docker Security:_ Los contenedores Docker se ejecutan con políticas de seguridad que restringen su acceso a los recursos del sistema operativo. Se utilizan imágenes confiables y se implementan prácticas de escaneo de vulnerabilidades para las imágenes de contenedores.
 
-_Orquestación Segura:_ Amazon ECS y Amazon MQ para RabbitMQ implementan medidas de seguridad para garantizar que la gestión y comunicación entre contenedores sea segura, incluyendo la autenticación y encriptación de colas de mensajes.
+_Orquestación Segura:_ Amazon ECS y Amazon MQ/ RabbitMQ implementan medidas de seguridad para garantizar que la gestión y comunicación entre contenedores sea segura, incluyendo la autenticación y encriptación de colas de mensajes
 
 **4. Redes y Seguridad en Amazon VPC:**
 
@@ -983,11 +1869,11 @@ _Autorización y Control de Acceso_: Se implementan controles de acceso basados 
 
 Esta arquitectura de seguridad integral es fundamental para proteger la infraestructura, los datos y las operaciones del sistema de la Fiscalía en AWS. Asegura que todos los aspectos, desde la gestión de usuarios hasta la protección de datos y la respuesta a incidentes, estén cubiertos de manera eficiente y efectiva, brindando un entorno seguro y confiable para todos los usuarios involucrados.
 
-## **Diagrama de Arquitectura de Seguridad**
+## **Diagramas de Arquitectura de Seguridad**
 
-![](RackMultipart20240103-1-jfj6p2_html_ca3d07c366d5eba5.png)
+![](RackMultipart20240116-1-7nwsn5_html_d214aa708a1c6a88.png)
 
-**(Diagrama usado como placeholder)**
+![](RackMultipart20240116-1-7nwsn5_html_1378d3f59407eb10.png)
 
 ###
 ###
@@ -1061,22 +1947,26 @@ Este apartado es un compendio de fuentes de información, documentación técnic
 ## **Documentación Oficial y Especificaciones Técnicas:**
 
 1. **Amazon Web Services (AWS):**
-  - Documentación AWS: Documentación oficial de AWS, incluyendo guías de usuario, tutoriales y referencias de API para todos los servicios utilizados.
-  - AWS Whitepapers: Informes técnicos que describen las prácticas recomendadas, patrones arquitectónicos y otra información técnica.
-2. **Nest.js y Jest:**
-  - Documentación Nest.js: Documentación oficial del framework de desarrollo utilizado para el backend.
+  - Documentación AWS: Documentación oficial de AWS, incluyendo guías de usuario, tutoriales y referencias de API para todos los servicios utilizados. [https://docs.aws.amazon.com/es\_es/](https://docs.aws.amazon.com/es_es/)
 
-- Documentación Jest: Guías y referencias para el marco de pruebas unitarias utilizado.
+- AWS Whitepapers: Informes técnicos que describen las prácticas recomendadas, patrones arquitectónicos y otra información técnica. [https://aws.amazon.com/es/whitepapers/?whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc&awsf.whitepapers-content-type=\*all&awsf.whitepapers-global-methodology=\*all&awsf.whitepapers-tech-category=\*all&awsf.whitepapers-industries=\*all&awsf.whitepapers-business-category=\*all](https://aws.amazon.com/es/whitepapers/?whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc&awsf.whitepapers-content-type=*all&awsf.whitepapers-global-methodology=*all&awsf.whitepapers-tech-category=*all&awsf.whitepapers-industries=*all&awsf.whitepapers-business-category=*all)
+
+1. **Nest.js y Jest:**
+  - Documentación Nest.js: Documentación oficial del framework de desarrollo utilizado para el backend. [https://docs.nestjs.com/](https://docs.nestjs.com/)
+
+- Documentación Jest: Guías y referencias para el marco de pruebas unitarias utilizado. [https://jestjs.io/es-ES/docs/getting-started](https://jestjs.io/es-ES/docs/getting-started)
 - **Docker y AWS Elastic Container Service:**
-- Documentación Docker: Documentación oficial de Docker, incluyendo guías de inicio rápido y referencia de comandos.
-- Documentación Amazon ECS: Documentación para el servicio de orquestación de contenedores de AWS.
-- **MySQL y Amazon RDS:**
-- Documentación MySQL: Documentación oficial de MySQL, incluyendo manuales y guías de referencia.
-- Documentación Amazon RDS: Guías y referencia para el servicio de base de datos relacional de AWS.
+- Documentación Docker: Documentación oficial de Docker, incluyendo guías de inicio rápido y referencia de comandos. [https://docs.docker.com/](https://docs.docker.com/)
+- Documentación Amazon ECS: Documentación para el servicio de orquestación de contenedores de AWS. [https://docs.aws.amazon.com/ecs/](https://docs.aws.amazon.com/ecs/)
+
+
+1. **MySQL y Amazon RDS:**
+  - Documentación MySQL: Documentación oficial de MySQL, incluyendo manuales y guías de referencia. [https://dev.mysql.com/doc/](https://dev.mysql.com/doc/)
+  - Documentación Amazon RDS: Guías y referencia para el servicio de base de datos relacional de AWS. [https://docs.aws.amazon.com/rds/](https://docs.aws.amazon.com/rds/)
 
 
 1. **Amazon DocumentDB:**
-  - Documentación Amazon DocumentDB: Documentación del servicio de base de datos de documentos compatible con MongoDB.
+  - Documentación Amazon DocumentDB: Documentación del servicio de base de datos de documentos compatible con MongoDB. [https://docs.aws.amazon.com/es\_es/documentdb/?id=docs\_gateway](https://docs.aws.amazon.com/es_es/documentdb/?id=docs_gateway)
 
 
 ## **Glosario de Términos**
@@ -1145,12 +2035,6 @@ Esta sección proporciona un punto de partida robusto para la exploración adici
 60. **URL (Uniform Resource Locator)**: Dirección que identifica la ubicación de un recurso en la web.
 61. **XML Template** : Plantilla utilizada para crear documentos XML.
 
-**LISTA DE TABLAS Y FIGURAS**
-
-Historial de versiones del manual del empleado………………………………………………….……5Requisitos del sistema………………………………………………………………………………………………………….………6Operaciones básicas…………………………………………………………………………………………………………….………9Solución de problemas…………………………………………………………………………………………………………………11Organigramas……………………………………………………………………………………………………………………………………12Especificaciones técnicas………………………………………………………………………………………………………….14
-
-**Retroalimentación**
-Agradecemos sus comentarios para mejorar este manual. Si tiene alguna sugerencia, corrección o comentario, comuníquese con nuestro equipo de soporte en
 
 
 
@@ -1160,12 +2044,11 @@ Agradecemos sus comentarios para mejorar este manual. Si tiene alguna sugerencia
 
 
 
- ![](RackMultipart20240103-1-jfj6p2_html_50764a382936d5f4.png)
+ ![](RackMultipart20240116-1-7nwsn5_html_50764a382936d5f4.png)
 
 
 
 
 
 
- ![Shape3](RackMultipart20240103-1-jfj6p2_html_dda2114c65eedd74.gif) ![](RackMultipart20240103-1-jfj6p2_html_a626591c24e3b708.png)
-
+ ![Shape10](RackMultipart20240116-1-7nwsn5_html_dda2114c65eedd74.gif) ![](RackMultipart20240116-1-7nwsn5_html_a626591c24e3b708.png)
